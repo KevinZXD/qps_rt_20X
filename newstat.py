@@ -24,9 +24,10 @@ class Tail(object):
 
     def __iter__(self):
         while True:
-            pos = self.file.tell()
+            pos = self.file.tell()  # 返回文件的当前位置
             line = self.file.readline()
             if not line:
+                # 如果程序没在写日志，就等待日志文件添加，有则继续
                 self.wait(pos)
             else:
                 yield line
