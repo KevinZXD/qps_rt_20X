@@ -169,7 +169,7 @@ class Parser(object):
                 self.stats.percentile(percentile_key, timestamp, rtime * 1000)
 
 
-def handle(path, begin, category, host='xx.106.126.216', port=2003, ip='xx.106.126.216'):
+def handle(path, begin, category, host='39.106.126.216', port=2003, ip='39.106.126.216'):
     stats = cache.vCache(host, port)
     log_parser = Parser(stats, category, ip)
     tail = Tail(path, begin)
@@ -189,7 +189,7 @@ if __name__ == '__main__':
                       metavar='FILE', )
     parser.add_option('-H', '--host',
                       dest='host',
-                      default='xx.106.126.216',
+                      default='39.106.126.216',
                       help='destination Server host server',
                       metavar='HOST', )
     parser.add_option('-p', '--port',

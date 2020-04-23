@@ -6,7 +6,7 @@ import time
 
 class Cache(object):
 
-    def __init__(self, host='xx.106.126.216', port=2003, max_size=128):
+    def __init__(self, host='39.106.126.216', port=2003, max_size=128):
         self.host = host
         self.port = port
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -28,7 +28,7 @@ class Cache(object):
             print(error)
 
     def write_graphite(self, msg):
-        ip = 'xx.106.126.216'
+        ip = '39.106.126.216'
         port = 2003
         try:
             self.graphite_sock.send(msg)
@@ -193,7 +193,7 @@ class Cache(object):
 
 class vCache(Cache):
 
-    def __init__(self, host='xx.106.126.216', port=2003, max_size=60):
+    def __init__(self, host='39.106.126.216', port=2003, max_size=60):
         Cache.__init__(self, host, port, max_size)
 
     def timer_format(self, timestamp, item):
